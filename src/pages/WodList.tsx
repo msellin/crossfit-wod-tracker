@@ -1,21 +1,21 @@
-// src/pages/Home.tsx
+// src/pages/WODList.tsx
 import React from 'react';
 import { Typography, Container } from '@mui/material';
 import Layout from '../components/Layout';
 
-const Home: React.FC = () => {
+const WODList: React.FC = () => {
     return (
         <Layout>
             <Container>
                 <Typography variant="h3" mt={5}>
-                    Welcome to CrossFit WOD Tracker
+                    WOD List
                 </Typography>
                 <Typography variant="body1" mt={2}>
-                    Track your workouts and view your progress here.
+                    Here are the upcoming Workouts of the Day (WODs).
                 </Typography>
             </Container>
         </Layout>
     );
 };
 
-export default Home;
+export default WODList;

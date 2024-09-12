@@ -1,8 +1,9 @@
 // src/App.tsx
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
-import Login from './pages/Login';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
+import WODList from './pages/WodList';
+import Login from './pages/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import SignUp from "./pages/SignUp.tsx";
 
@@ -10,6 +11,7 @@ const App: React.FC = () => {
     return (
         <Router>
             <Routes>
+                <Route path="/" element={<Navigate to="/login" />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route
@@ -20,7 +22,14 @@ const App: React.FC = () => {
                         </ProtectedRoute>
                     }
                 />
-                <Route path="/" element={<Navigate to={"/home"} />} />
+                <Route
+                    path="/wodlist"
+                    element={
+                        <ProtectedRoute>
+                            <WODList />
+                        </ProtectedRoute>
+                    }
+                />
             </Routes>
         </Router>
     );
